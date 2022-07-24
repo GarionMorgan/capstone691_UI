@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Wizard Application</title>
+    <!--Bootstrap code that installs bootstrap to our code-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- a container from bootstrap from mid width -->
+    <div class="container-md">
+      <!--Navigation bar-->
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <!-- Title of application displayed on navbar -->
+          <a class="navbar-brand" href="index.html"><h2>Weather Wizard</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Current Weather</a>
+              <a class="nav-link active" aria-current="page" href="fiveDay.html">5-Day Weather</a>
+              <a class="nav-link" href="observation.html">Observations</a>
+              <a class="nav-link" href="request.html">Requests</a>
+              <a class="nav-link" href="profile.html">Profile</a>
+            </div> <!-- End of navbar-nav div -->
+          </div> <!-- End of collapse navbar-collapse div -->
+        </div> <!-- End of container-fluid div -->
+      </nav> <!-- End of navigation bar div -->
+
+
+      <h1>This is Five Day Weather!</h1>
+    </div> <!-- End of bootstrap container div -->
+
+    <!--Bootstrap code that needs to stay at the bottom of the body-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
