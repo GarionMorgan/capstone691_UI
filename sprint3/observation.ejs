@@ -1,0 +1,82 @@
+<%- include('header') -%>
+
+<!-- a container from bootstrap from mid width -->
+<div class="container-md">
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Title of application displayed on navbar -->
+      <a class="navbar-brand" href="<%= CURRENTWX %>"><h2>Weather Wizard</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="<%= CURRENTWX %>">Current Weather</a>
+          <a class="nav-link" href="<%= FIVEDAYWX %>">5-Day Weather</a>
+          <a class="nav-link active" aria-current="page" href="<%= OBS %>">Observations</a>
+          <a class="nav-link" href="<%= REQUEST %>">Requests</a>
+          <a class="nav-link" href="<%= PROFILE %>">Profile</a>
+        </div> <!-- End of navbar-nav div -->
+      </div> <!-- End of collapse navbar-collapse div -->
+    </div> <!-- End of container-fluid div -->
+  </nav> <!-- End of navigation bar div -->
+  <!--     --->
+
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-dark" type="submit">Search</button>
+  </form>
+
+  <br>
+
+  <div class="row g-5">
+    <div class="col-md-12">
+      <div class="d-grid gap-2 d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Post Observation
+        </button>
+      </div>
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">Weather Observations</h3>
+
+        <% newListItems.forEach(function(item){ %>
+          <article class="blog-post">
+            <h2 class="blog-post-title mb-1"><%= item.location %></h2>
+            <p class="blog-post-meta">{date} by <a href="#">{username}</a></p>
+            <p><%= item.post %></p>
+            <hr>
+          </article>
+        <%}); %>
+
+
+      <!-- form for the modal display -->
+      <form class="" action="/observation" method="post">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <label for="cityInput">City Name:</label>
+                <input id="cityInput" type="text" name="cityName">
+                <br>
+                <label for="cityInput">Post about the weather</label>
+                <textarea name="post" rows="8" cols="60"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Commit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+<%- include('footer') -%>

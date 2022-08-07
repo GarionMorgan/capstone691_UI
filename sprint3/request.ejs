@@ -1,0 +1,48 @@
+<%- include('header') -%>
+
+<!-- a container from bootstrap from mid width -->
+<div class="container-md">
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Title of application displayed on navbar -->
+      <a class="navbar-brand" href="<%= CURRENTWX %>"><h2>Weather Wizard</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="<%= CURRENTWX %>">Current Weather</a>
+          <a class="nav-link" href="<%= FIVEDAYWX %>">5-Day Weather</a>
+          <a class="nav-link" href="<%= OBS %>">Observations</a>
+          <a class="nav-link active" aria-current="page" href="<%= REQUEST %>">Requests</a>
+          <a class="nav-link" href="<%= PROFILE %>">Profile</a>
+        </div> <!-- End of navbar-nav div -->
+      </div> <!-- End of collapse navbar-collapse div -->
+    </div> <!-- End of container-fluid div -->
+  </nav> <!-- End of navigation bar div -->
+
+  <h2 class="mt-4">Request Weather</h2>
+  <p>From the list below <strong>please select which type of request you desire</strong>. There are three choices.</p> <p><strong>Personalized Weather</strong> allows you to request weather for a certain location up to 16 days.</p> <p><strong>Flight Plan</strong> allows you to request data for a flight.</p> <p><strong>Climatology</strong> allows you to request climatology data for a certain location</p>
+
+    <div class="row mb-3 text-center">
+      <div class="col-md-4 themed-grid-col">
+        <form class="" action="/personalizedRequest" method="post">
+          <button type="button" class="btn btn-primary" onClick="this.form.submit()">Personalized Weather</button>
+        </form>
+      </div>
+      <div class="col-md-4 themed-grid-col">
+        <form class="" action="/flightPlanRequest" method="post">
+          <button type="button" class="btn btn-primary" onClick="this.form.submit()">Flight Plan</button>
+        </form>
+      </div>
+      <div class="col-md-4 themed-grid-col">
+        <form class="" action="/climatologyRequest" method="post">
+          <button type="button" class="btn btn-primary" onClick="this.form.submit()">Climatology</button>
+        </form>
+      </div>
+    </div>
+
+
+
+<%- include('footer') -%>
