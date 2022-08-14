@@ -1,0 +1,57 @@
+<%- include('header') -%>
+
+<!-- a container from bootstrap from mid width -->
+<div class="container-md">
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Title of application displayed on navbar -->
+      <a class="navbar-brand" href="<%= CURRENTWX %>"><h2>Weather Wizard</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="<%= CURRENTWX %>">Current Weather</a>
+          <a class="nav-link" href="<%= FIVEDAYWX %>">5-Day Weather</a>
+          <a class="nav-link" href="<%= OBS %>">Observations</a>
+          <a class="nav-link" href="<%= REQUEST %>">Requests</a>
+          <a class="nav-link active" aria-current="page" href="<%= PROFILE %>">Profile</a>
+        </div> <!-- End of navbar-nav div -->
+      </div> <!-- End of collapse navbar-collapse div -->
+    </div> <!-- End of container-fluid div -->
+  </nav> <!-- End of navigation bar div -->
+  <!--     -->
+
+
+
+
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Welcome <strong><%=USER%></strong>!</h1>
+        <br>
+
+
+
+        <div class="row mb-3 text-center">
+          <div class="col-md-4 themed-grid-col"><a href="/importWX" class="btn btn-primary my-2">Insert Weather Data</a></div>
+          <div class="col-md-4 themed-grid-col"><a href="/forecastWX" class="btn btn-primary my-2">Forecast 5 Day Weather</a></div>
+          <div class="col-md-4 themed-grid-col"><a href="/request" class="btn btn-primary my-2">Tailored Weather Request</a></div>
+        </div>
+
+        <br>
+
+        <h3>You need to be verified in order to insert WX data, forecast, or request weather!</h3>
+
+        <p>
+          <a href="#" class="btn btn-primary my-2">Become verified</a>
+          <a href="/logout" class="btn btn-secondary my-2">Logout</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('footer') -%>
