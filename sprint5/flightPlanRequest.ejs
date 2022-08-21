@@ -1,0 +1,259 @@
+<%- include('header') -%>
+<!-- a container from bootstrap from mid width -->
+<div class="container-md">
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Title of application displayed on navbar -->
+      <a class="navbar-brand" href="<%= CURRENTWX %>"><h2>Weather Wizard</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="<%= CURRENTWX %>">Current Weather</a>
+          <a class="nav-link" href="<%= FIVEDAYWX %>">5-Day Weather</a>
+          <a class="nav-link" href="<%= OBS %>">Observations</a>
+          <a class="nav-link active" aria-current="page" href="<%= REQUEST %>">Requests</a>
+          <a class="nav-link" href="<%= PROFILE %>">Profile</a>
+        </div> <!-- End of navbar-nav div -->
+      </div> <!-- End of collapse navbar-collapse div -->
+    </div> <!-- End of container-fluid div -->
+  </nav> <!-- End of navigation bar div -->
+
+<h1>Flight Plan Request</h1>
+
+<form class="" action="/requestedFlight" method="post">
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-6 themed-grid-col">
+      <label for="address" class="form-label">Take off location</label>
+        <input name ="takeoff" type="text" class="form-control" id="location" placeholder="Location" required>
+        <div class="invalid-feedback">
+          Please enter in the location
+        </div>
+    </div>
+    <div class="col-md-3 themed-grid-col">
+      <label for="address" class="form-label">Take off time</label>
+        <input name ="takeoffTime" type="text" class="form-control" id="time" placeholder="Take off time" required>
+        <div class="invalid-feedback">
+          E.g. "5" or "16"
+        </div>
+    </div>
+    <div class="col-md-3 themed-grid-col">
+      <label for="address" class="form-label">Email Address</label>
+        <input name ="email" type="email" class="form-control" id="email" placeholder="Email address" required>
+        <div class="invalid-feedback">
+          Please give an email address
+        </div>
+    </div>
+
+  </div>
+
+
+  <br>
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <input type="text" name="date" class="form-control" placeholder="Date of take off">
+    </div>
+    <div class="col-md-2 themed-grid-col">
+      <input type="text" name="flightLvl1" class="form-control" placeholder="flight lvl">
+    </div>
+    <div class="col-md-2 themed-grid-col">
+      <input type="text" name="flightLvl2" class="form-control" placeholder="flight lvl">
+    </div>
+    <div class="col-md-2 themed-grid-col">
+      <input type="text" name="flightLvl3" class="form-control" placeholder="flight lvl">
+    </div>
+    <div class="col-md-2 themed-grid-col">
+      <input type="text" name="flightLvl4" class="form-control" placeholder="flight lvl">
+    </div>
+
+  </div>
+
+  <!-- Landing Info 1 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type1" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location1" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime1" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 2 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type2" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location2" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime2" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 3 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type3" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location3" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime3" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 4 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type4" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location4" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime4" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 5 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type5" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location5" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime5" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 6 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type6" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location6" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime6" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 7 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type7" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location7" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime7" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Landing Info 8 -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Dest/Alt/Drop-In</label>
+        <input name ="type8" type="text" class="form-control" id="interval" placeholder="Dest/Alt/Drop-In">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">location</label>
+        <input name ="location8" type="text" class="form-control" id="interval" placeholder="Location">
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Landing Time</label>
+        <input name ="landTime8" type="text" class="form-control" id="interval" placeholder="Landing Time">
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <!--Blank space for effect-->
+    </div>
+    <div class="col-md-4 themed-grid-col">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <!--Blank space for effect-->
+    </div>
+
+  </div>
+
+</form>
+<%- include('footer') -%>

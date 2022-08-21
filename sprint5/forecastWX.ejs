@@ -1,0 +1,374 @@
+<%- include('header') -%>
+
+<!-- a container from bootstrap from mid width -->
+<div class="container-md">
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Title of application displayed on navbar -->
+      <a class="navbar-brand" href="<%= CURRENTWX %>"><h2>Weather Wizard</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="<%= CURRENTWX %>">Current Weather</a>
+          <a class="nav-link" href="<%= FIVEDAYWX %>">5-Day Weather</a>
+          <a class="nav-link" href="<%= OBS %>">Observations</a>
+          <a class="nav-link" href="<%= REQUEST %>">Requests</a>
+          <a class="nav-link" href="<%= PROFILE %>">Profile</a>
+        </div> <!-- End of navbar-nav div -->
+      </div> <!-- End of collapse navbar-collapse div -->
+    </div> <!-- End of container-fluid div -->
+  </nav> <!-- End of navigation bar div -->
+  <!--     -->
+
+<h1>Forecast WX!</h1>
+
+<form class="" action="/forecastWX" method="post">
+
+
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-6 themed-grid-col">
+      <label for="address" class="form-label">Location</label>
+        <input name ="location" type="text" class="form-control" id="location" placeholder="Location" required>
+        <div class="invalid-feedback">
+          Please enter in the location
+        </div>
+    </div>
+    <div class="col-md-3 themed-grid-col">
+
+    </div>
+    <div class="col-md-3 themed-grid-col">
+
+    </div>
+
+  </div>
+
+  <!-- 1st day -->
+
+  <div class="row mb-3 text-center">
+
+    <h3>Day 1</h3>
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Weather</label>
+        <input name="Weather" type="text" class="form-control" id="Weather" placeholder="Weather" required>
+        <div class="invalid-feedback">
+          Please enter in the weather
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Clouds</label>
+        <input name="Clouds" type="text" class="form-control" id="Clouds" placeholder="Clouds" required>
+        <div class="invalid-feedback">
+          Please enter in clouds
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Visibility</label>
+        <input name="Visibility" type="text" class="form-control" id="Visibility" placeholder="Visibility" required>
+        <div class="invalid-feedback">
+          Please enter in visibility
+        </div>
+    </div>
+
+  </div>
+
+
+  <!-- 2nd column -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Low Temperature</label>
+        <input name="Low" type="text" class="form-control" id="Low" placeholder="Low Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in low temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">High Temperature</label>
+        <input name="High" type="text" class="form-control" id="High" placeholder="High Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in high temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Winds</label>
+        <input name="Winds" type="text" class="form-control" id="Winds" placeholder="Winds" required>
+        <div class="invalid-feedback">
+          Please enter in winds
+        </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- 2nd day -->
+
+  <div class="row mb-3 text-center">
+
+    <h3>Day 2</h3>
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Weather</label>
+        <input name="Weather2" type="text" class="form-control" id="Weather" placeholder="Weather" required>
+        <div class="invalid-feedback">
+          Please enter in the weather
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Clouds</label>
+        <input name="Clouds2" type="text" class="form-control" id="Clouds" placeholder="Clouds" required>
+        <div class="invalid-feedback">
+          Please enter in clouds
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Visibility</label>
+        <input name="Visibility2" type="text" class="form-control" id="Visibility" placeholder="Visibility" required>
+        <div class="invalid-feedback">
+          Please enter in visibility
+        </div>
+    </div>
+
+  </div>
+
+
+  <!-- 2nd column -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Low Temperature</label>
+        <input name="Low2" type="text" class="form-control" id="Low" placeholder="Low Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in low temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">High Temperature</label>
+        <input name="High2" type="text" class="form-control" id="High" placeholder="High Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in high temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Winds</label>
+        <input name="Winds2" type="text" class="form-control" id="Winds" placeholder="Winds" required>
+        <div class="invalid-feedback">
+          Please enter in winds
+        </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- 1st day -->
+
+  <div class="row mb-3 text-center">
+
+    <h3>Day 3</h3>
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Weather</label>
+        <input name="Weather3" type="text" class="form-control" id="Weather" placeholder="Weather" required>
+        <div class="invalid-feedback">
+          Please enter in the weather
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Clouds</label>
+        <input name="Clouds3" type="text" class="form-control" id="Clouds" placeholder="Clouds" required>
+        <div class="invalid-feedback">
+          Please enter in clouds
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Visibility</label>
+        <input name="Visibility3" type="text" class="form-control" id="Visibility" placeholder="Visibility" required>
+        <div class="invalid-feedback">
+          Please enter in visibility
+        </div>
+    </div>
+
+  </div>
+
+
+  <!-- 2nd column -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Low Temperature</label>
+        <input name="Low3" type="text" class="form-control" id="Low" placeholder="Low Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in low temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">High Temperature</label>
+        <input name="High3" type="text" class="form-control" id="High" placeholder="High Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in high temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Winds</label>
+        <input name="Winds3" type="text" class="form-control" id="Winds" placeholder="Winds" required>
+        <div class="invalid-feedback">
+          Please enter in winds
+        </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- 4th day -->
+
+  <div class="row mb-3 text-center">
+
+    <h3>Day 4</h3>
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Weather</label>
+        <input name="Weather4" type="text" class="form-control" id="Weather" placeholder="Weather" required>
+        <div class="invalid-feedback">
+          Please enter in the weather
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Clouds</label>
+        <input name="Clouds4" type="text" class="form-control" id="Clouds" placeholder="Clouds" required>
+        <div class="invalid-feedback">
+          Please enter in clouds
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Visibility</label>
+        <input name="Visibility4" type="text" class="form-control" id="Visibility" placeholder="Visibility" required>
+        <div class="invalid-feedback">
+          Please enter in visibility
+        </div>
+    </div>
+
+  </div>
+
+
+  <!-- 2nd column -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Low Temperature</label>
+        <input name="Low4" type="text" class="form-control" id="Low" placeholder="Low Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in low temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">High Temperature</label>
+        <input name="High4" type="text" class="form-control" id="High" placeholder="High Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in high temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Winds</label>
+        <input name="Winds4" type="text" class="form-control" id="Winds" placeholder="Winds" required>
+        <div class="invalid-feedback">
+          Please enter in winds
+        </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- 5th day -->
+
+  <div class="row mb-3 text-center">
+
+    <h3>Day 5</h3>
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Weather</label>
+        <input name="Weather5" type="text" class="form-control" id="Weather" placeholder="Weather" required>
+        <div class="invalid-feedback">
+          Please enter in the weather
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Clouds</label>
+        <input name="Clouds5" type="text" class="form-control" id="Clouds" placeholder="Clouds" required>
+        <div class="invalid-feedback">
+          Please enter in clouds
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Visibility</label>
+        <input name="Visibility5" type="text" class="form-control" id="Visibility" placeholder="Visibility" required>
+        <div class="invalid-feedback">
+          Please enter in visibility
+        </div>
+    </div>
+
+  </div>
+
+
+  <!-- 2nd column -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Low Temperature</label>
+        <input name="Low5" type="text" class="form-control" id="Low" placeholder="Low Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in low temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">High Temperature</label>
+        <input name="High5" type="text" class="form-control" id="High" placeholder="High Temperature" required>
+        <div class="invalid-feedback">
+          Please enter in high temperature
+        </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <label for="address" class="form-label">Winds</label>
+        <input name="Winds5" type="text" class="form-control" id="Winds" placeholder="Winds" required>
+        <div class="invalid-feedback">
+          Please enter in winds
+        </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- submission -->
+
+  <div class="row mb-3 text-center">
+
+    <div class="col-md-4 themed-grid-col">
+      <!--Blank space for effect-->
+    </div>
+    <div class="col-md-4 themed-grid-col">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <!--Blank space for effect-->
+    </div>
+
+  </div>
+
+  </form>
+
+
+<%- include('footer') -%>
